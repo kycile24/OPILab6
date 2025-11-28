@@ -26,10 +26,10 @@ struct Customer {
     string phone;
 };
 
-// ���� ��������� ������
+// Debug function to display products
 void displayProducts(const vector<Product>& products) {
-    cout << "\n[DEBUG] displayProducts() called\n";
-    cout << "[DEBUG] products.size() = " << products.size() << "\n";
+    cout << "\n displayProducts() called\n";
+    cout << "products.size() = " << products.size() << "\n";
 
     cout << "\n=== Available products ===\n";
     cout << left << setw(15) << "Name"
@@ -39,10 +39,10 @@ void displayProducts(const vector<Product>& products) {
 
     int index = 0;
     for (const auto& prod : products) {
-        cout << "[DEBUG] Product #" << index << "\n";
-        cout << "[DEBUG]   name  = \"" << prod.name << "\"\n";
-        cout << "[DEBUG]   price = " << prod.price << "\n";
-        cout << "[DEBUG]   stock = " << prod.stock << "\n";
+        cout << "Product #" << index << "\n";
+        cout << "name  = \"" << prod.name << "\"\n";
+        cout << "price = " << prod.price << "\n";
+        cout << "stock = " << prod.stock << "\n";
 
         cout << left << setw(15) << prod.name
              << setw(8) << fixed << setprecision(2) << prod.price
@@ -52,7 +52,7 @@ void displayProducts(const vector<Product>& products) {
     }
 
     cout << "----------------------------\n";
-    cout << "[DEBUG] End of displayProducts()\n";
+    cout << "End of displayProducts()\n";
 }
 
 // ������������� �볺���
