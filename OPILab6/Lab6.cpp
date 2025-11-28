@@ -182,3 +182,4 @@ int main() {
 
     return 0;
 }
+//hello pani great prepodovatel
