@@ -29,19 +29,33 @@ struct Customer {
 
 // ���� ��������� ������
 void displayProducts(const vector<Product>& products) {
+    cout << "\n[DEBUG] displayProducts() called\n";
+    cout << "[DEBUG] products.size() = " << products.size() << "\n";
+
     cout << "\n=== Available products ===\n";
     cout << left << setw(15) << "Name"
-        << setw(8) << "Price"
-        << setw(8) << "Stock" << endl;
+         << setw(8) << "Price"
+         << setw(8) << "Stock" << endl;
     cout << "----------------------------\n";
 
+    int index = 0;
     for (const auto& prod : products) {
+        cout << "[DEBUG] Product #" << index << "\n";
+        cout << "[DEBUG]   name  = \"" << prod.name << "\"\n";
+        cout << "[DEBUG]   price = " << prod.price << "\n";
+        cout << "[DEBUG]   stock = " << prod.stock << "\n";
+
         cout << left << setw(15) << prod.name
-            << setw(8) << fixed << setprecision(2) << prod.price
-            << setw(8) << prod.stock << endl;
+             << setw(8) << fixed << setprecision(2) << prod.price
+             << setw(8) << prod.stock << endl;
+
+        index++;
     }
+
     cout << "----------------------------\n";
+    cout << "[DEBUG] End of displayProducts()\n";
 }
+
 
 // ������������� �볺���
 Customer identifyCustomer(vector<Customer>& customers) {
