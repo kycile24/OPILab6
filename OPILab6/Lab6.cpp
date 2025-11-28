@@ -56,7 +56,6 @@ void displayProducts(const vector<Product>& products) {
     cout << "[DEBUG] End of displayProducts()\n";
 }
 
-
 // ������������� �볺���
 Customer identifyCustomer(vector<Customer>& customers) {
     string phone;
