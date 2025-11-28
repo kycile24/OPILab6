@@ -3,30 +3,31 @@
 #include <string>
 #include <iomanip>
 #include <limits>
+//commit2
 
 using namespace std;
 
-// Структура товару
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 struct Product {
     string name;
     double price;
     int stock;
 };
 
-// Структура елемента чеку
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 struct SaleItem {
     string name;
     double price;
     int quantity;
 };
 
-// Структура клієнта
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅлієпїЅпїЅпїЅ
 struct Customer {
     string name;
     string phone;
 };
 
-// Вивід доступних товарів
+// пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 void displayProducts(const vector<Product>& products) {
     cout << "\n=== Available products ===\n";
     cout << left << setw(15) << "Name"
@@ -42,7 +43,7 @@ void displayProducts(const vector<Product>& products) {
     cout << "----------------------------\n";
 }
 
-// Ідентифікація клієнта
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅлієпїЅпїЅпїЅ
 Customer identifyCustomer(vector<Customer>& customers) {
     string phone;
     cout << "Enter customer phone number: ";
@@ -66,7 +67,7 @@ Customer identifyCustomer(vector<Customer>& customers) {
     return newCustomer;
 }
 
-// Введення товарів у чек
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ
 void inputSale(vector<Product>& products, vector<SaleItem>& sale) {
     string itemName;
     int quantity;
@@ -107,7 +108,7 @@ void inputSale(vector<Product>& products, vector<SaleItem>& sale) {
     } while (cont == 'y' || cont == 'Y');
 }
 
-// Розрахунок підсумку
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 double calculateTotal(const vector<SaleItem>& sale) {
     double total = 0;
     for (const auto& item : sale) {
@@ -116,7 +117,7 @@ double calculateTotal(const vector<SaleItem>& sale) {
     return total * 1.2; // VAT 20%
 }
 
-// Вибір способу оплати
+// пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 string selectPaymentMethod() {
     int choice;
     cout << "Select payment method:\n";
@@ -126,7 +127,7 @@ string selectPaymentMethod() {
     return (choice == 1) ? "Cash" : "Card";
 }
 
-// Вивід чеку
+// пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 void printReceipt(const vector<SaleItem>& sale, const Customer& customer) {
     cout << "\n===== Sale Receipt =====\n";
     cout << "Customer: " << customer.name << endl;
