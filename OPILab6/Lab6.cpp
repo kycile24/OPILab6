@@ -26,10 +26,6 @@ struct Customer {
     string phone;
 };
 
-string unUsedFunction() {
-    return "This function is not used in the current implementation.";
-}
-
 // Debug function to display products
 void displayProducts(const vector<Product>& products) {
     cout << "\n displayProducts() called\n";
@@ -57,9 +53,6 @@ void displayProducts(const vector<Product>& products) {
 
     cout << "----------------------------\n";
     cout << "End of displayProducts()\n";
-}
-string unusedFunction2() {
-    return "This function is not used in the current implementation.";
 }
 
 // ������������� �볺���
