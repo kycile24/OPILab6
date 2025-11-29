@@ -6,43 +6,56 @@
 
 using namespace std;
 
-// Структура товару
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 struct Product {
     string name;
     double price;
     int stock;
 };
 
-// Структура елемента чеку
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 struct SaleItem {
     string name;
     double price;
     int quantity;
 };
 
-// Структура клієнта
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅлієпїЅпїЅпїЅ
 struct Customer {
     string name;
     string phone;
 };
 
-// Вивід доступних товарів
+// Debug function to display products
 void displayProducts(const vector<Product>& products) {
+    cout << "\n displayProducts() called\n";
+    cout << "products.size() = " << products.size() << "\n";
+
     cout << "\n=== Available products ===\n";
     cout << left << setw(15) << "Name"
-        << setw(8) << "Price"
-        << setw(8) << "Stock" << endl;
+         << setw(8) << "Price"
+         << setw(8) << "Stock" << endl;
     cout << "----------------------------\n";
 
+    int index = 0;
     for (const auto& prod : products) {
+        cout << "Product #" << index << "\n";
+        cout << "name  = \"" << prod.name << "\"\n";
+        cout << "price = " << prod.price << "\n";
+        cout << "stock = " << prod.stock << "\n";
+
         cout << left << setw(15) << prod.name
-            << setw(8) << fixed << setprecision(2) << prod.price
-            << setw(8) << prod.stock << endl;
+             << setw(8) << fixed << setprecision(2) << prod.price
+             << setw(8) << prod.stock << endl;
+
+        index++;
     }
+
     cout << "----------------------------\n";
+    cout << "End of displayProducts()\n";
 }
 
-// Ідентифікація клієнта
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅлієпїЅпїЅпїЅ
 Customer identifyCustomer(vector<Customer>& customers) {
     string phone;
     cout << "Enter customer phone number: ";
@@ -66,7 +79,7 @@ Customer identifyCustomer(vector<Customer>& customers) {
     return newCustomer;
 }
 
-// Введення товарів у чек
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ
 void inputSale(vector<Product>& products, vector<SaleItem>& sale) {
     string itemName;
     int quantity;
@@ -107,7 +120,7 @@ void inputSale(vector<Product>& products, vector<SaleItem>& sale) {
     } while (cont == 'y' || cont == 'Y');
 }
 
-// Розрахунок підсумку
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 double calculateTotal(const vector<SaleItem>& sale) {
     double total = 0;
     for (const auto& item : sale) {
@@ -116,7 +129,7 @@ double calculateTotal(const vector<SaleItem>& sale) {
     return total * 1.2; // VAT 20%
 }
 
-// Вибір способу оплати
+// пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 string selectPaymentMethod() {
     int choice;
     cout << "Select payment method:\n";
@@ -130,9 +143,10 @@ string selectPaymentMethod() {
 	else
 		return "Unknown";
 }
-int a = 5 * 6;
-int b = 10 / 3;
-// Вивід чеку
+
+
+
+// Р’РёРІС–Рґ С‡РµРєСѓ
 void printReceipt(const vector<SaleItem>& sale, const Customer& customer) {
     cout << "\n===== Sale Receipt =====\n";
     cout << "Customer: " << customer.name << endl;
