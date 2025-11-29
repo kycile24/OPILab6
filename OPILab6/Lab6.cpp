@@ -6,21 +6,21 @@
 
 using namespace std;
 
-// ��������� ������
+// struct products
 struct Product {
     string name;
     double price;
     int stock;
 };
 
-// ��������� �������� ����
+// struct elements of receipt
 struct SaleItem {
     string name;
     double price;
     int quantity;
 };
 
-// ��������� �볺���
+// struct customers
 struct Customer {
     string name;
     string phone;
@@ -57,7 +57,7 @@ void displayProducts(const vector<Product>& products) {
 }
 
 
-// ������������� �볺���
+// struct to identify customer
 Customer identifyCustomer(vector<Customer>& customers) {
     string phone;
     cout << "Enter customer phone number: ";
@@ -81,7 +81,7 @@ Customer identifyCustomer(vector<Customer>& customers) {
     return newCustomer;
 }
 
-// �������� ������ � ���
+// cout avaible products and input sale items
 void inputSale(vector<Product>& products, vector<SaleItem>& sale) {
     string itemName;
     int quantity;
@@ -122,7 +122,7 @@ void inputSale(vector<Product>& products, vector<SaleItem>& sale) {
     } while (cont == 'y' || cont == 'Y');
 }
 
-// ���������� �������
+// struct to calculate total amount with VAT
 double calculateTotal(const vector<SaleItem>& sale) {
     double total = 0;
     for (const auto& item : sale) {
@@ -131,7 +131,7 @@ double calculateTotal(const vector<SaleItem>& sale) {
     return total * 1.2; // VAT 20%
 }
 
-// ���� ������� ������
+// struct to select payment method
 string selectPaymentMethod() {
     int choice;
     cout << "Select payment method:\n";
@@ -148,7 +148,7 @@ string selectPaymentMethod() {
 
 
 
-// Вивід чеку
+// struct to print receipt
 void printReceipt(const vector<SaleItem>& sale, const Customer& customer) {
     cout << "\n===== Sale Receipt =====\n";
     cout << "Customer: " << customer.name << endl;
