@@ -6,27 +6,27 @@
 
 using namespace std;
 
-// Структура товару
+// Г‘ГІГ°ГіГЄГІГіГ°Г  ГІГ®ГўГ Г°Гі
 struct Product {
     string name;
     double price;
     int stock;
 };
 
-// Структура елемента чеку
+// Г‘ГІГ°ГіГЄГІГіГ°Г  ГҐГ«ГҐГ¬ГҐГ­ГІГ  Г·ГҐГЄГі
 struct SaleItem {
     string name;
     double price;
     int quantity;
 };
 
-// Структура клієнта
+// Г‘ГІГ°ГіГЄГІГіГ°Г  ГЄГ«ВіВєГ­ГІГ 
 struct Customer {
     string name;
     string phone;
 };
 
-// Вивід доступних товарів
+// Г‚ГЁГўВіГ¤ Г¤Г®Г±ГІГіГЇГ­ГЁГµ ГІГ®ГўГ Г°ВіГў
 void displayProducts(const vector<Product>& products) {
     cout << "\n=== Available products ===\n";
     cout << left << setw(15) << "Name"
@@ -42,7 +42,7 @@ void displayProducts(const vector<Product>& products) {
     cout << "----------------------------\n";
 }
 
-// Ідентифікація клієнта
+// ВІГ¤ГҐГ­ГІГЁГґВіГЄГ Г¶ВіГї ГЄГ«ВіВєГ­ГІГ 
 Customer identifyCustomer(vector<Customer>& customers) {
     string phone;
     cout << "Enter customer phone number: ";
@@ -66,7 +66,7 @@ Customer identifyCustomer(vector<Customer>& customers) {
     return newCustomer;
 }
 
-// Введення товарів у чек
+// Г‚ГўГҐГ¤ГҐГ­Г­Гї ГІГ®ГўГ Г°ВіГў Гі Г·ГҐГЄ
 void inputSale(vector<Product>& products, vector<SaleItem>& sale) {
     string itemName;
     int quantity;
@@ -107,7 +107,7 @@ void inputSale(vector<Product>& products, vector<SaleItem>& sale) {
     } while (cont == 'y' || cont == 'Y');
 }
 
-// Розрахунок підсумку
+// ГђГ®Г§Г°Г ГµГіГ­Г®ГЄ ГЇВіГ¤Г±ГіГ¬ГЄГі
 double calculateTotal(const vector<SaleItem>& sale) {
     double total = 0;
     for (const auto& item : sale) {
@@ -116,10 +116,10 @@ double calculateTotal(const vector<SaleItem>& sale) {
     return total * 1.2; // VAT 20%
 }
 
-// Вибір способу оплати
+// Г‚ГЁГЎВіГ° Г±ГЇГ®Г±Г®ГЎГі Г®ГЇГ«Г ГІГЁ
 string selectPaymentMethod() {
     int choice;
-    cout << "Select payment method:\n";
+   
     cout << "1. Cash\n2. Card\nEnter choice: ";
     cin >> choice;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -131,7 +131,7 @@ string selectPaymentMethod() {
 		return "Unknown";
 }
 
-// Вивід чеку
+// Г‚ГЁГўВіГ¤ Г·ГҐГЄГі
 void printReceipt(const vector<SaleItem>& sale, const Customer& customer) {
     cout << "\n===== Sale Receipt =====\n";
     cout << "Customer: " << customer.name << endl;
