@@ -132,7 +132,7 @@ double calculateTotal(const vector<SaleItem>& sale) {
 // ���� ������� ������
 string selectPaymentMethod() {
     int choice;
-    cout << "Select yment method:\n";
+    cout << "Select payment method:\n";
     cout << "1. Cash\n2. Card\nEnter choice: ";
     cin >> choice;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
