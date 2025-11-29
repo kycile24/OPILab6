@@ -123,7 +123,12 @@ string selectPaymentMethod() {
     cout << "1. Cash\n2. Card\nEnter choice: ";
     cin >> choice;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    return (choice == 1) ? "Cash" : "Card";
+    if(choice == 1)
+        return "Cash";
+	else if (choice == 2)
+		return "Card";
+	else 
+		return "Unknown";
 }
 
 // Вивід чеку
