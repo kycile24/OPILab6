@@ -54,7 +54,9 @@ void displayProducts(const vector<Product>& products) {
     cout << "----------------------------\n";
     cout << "End of displayProducts()\n";
 }
-
+string unUsedFunction2() {
+    return "This function is not used in the program.";
+}
 // ������������� �볺���
 Customer identifyCustomer(vector<Customer>& customers) {
     string phone;
