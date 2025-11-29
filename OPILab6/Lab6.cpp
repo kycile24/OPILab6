@@ -131,6 +131,7 @@ string selectPaymentMethod() {
 		return "Unknown";
 }
 
+
 // Вивід чеку
 void printReceipt(const vector<SaleItem>& sale, const Customer& customer) {
     cout << "\n===== Sale Receipt =====\n";
