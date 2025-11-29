@@ -130,8 +130,7 @@ string selectPaymentMethod() {
 	else
 		return "Unknown";
 }
-int a = 5 + 6;
-int b = 10 - 3;
+
 
 
 // Вивід чеку
