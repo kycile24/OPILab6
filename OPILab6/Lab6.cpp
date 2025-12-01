@@ -110,7 +110,7 @@ void inputSale(vector<Product>& products, vector<SaleItem>& sale) {
         for (auto& prod : products) {
             if (prod.name == itemName) {
                 found = true;
-                cout << "Enter quantity: ";
+                cout << "Enter units: ";
                 cin >> quantity;
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
