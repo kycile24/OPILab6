@@ -64,6 +64,11 @@ Customer identifyCustomer(vector<Customer>& customers) {
     cin >> ws;
     getline(cin, phone);
 
+    if (!isValidPhone(phone)) {
+        cout << "Error: Invalid phone format!\n";
+        return { "INVALID", "INVALID" };
+    }
+
     for (auto& c : customers) {
         if (c.phone == phone) {
             cout << "Welcome, " << c.name << "!\n";
@@ -204,3 +209,4 @@ int main() {
 
     return 0;
 }
+//hello pani great prepodovatel
