@@ -42,12 +42,25 @@ void displayProducts(const vector<Product>& products) {
     cout << "----------------------------\n";
 }
 
+//Умова для правильного вводу номера
+bool isValidPhone(const string& phone) {
+    if (phone.length() != 10) return false;    
+    for (char c : phone)
+        if (!isdigit(c)) return false;         
+    return true;
+}
+
 // Ідентифікація клієнта
 Customer identifyCustomer(vector<Customer>& customers) {
     string phone;
     cout << "Enter customer phone number: ";
     cin >> ws;
     getline(cin, phone);
+
+    if (!isValidPhone(phone)) {
+        cout << "Error: Invalid phone format!\n";
+        return { "INVALID", "INVALID" };
+    }
 
     for (auto& c : customers) {
         if (c.phone == phone) {
