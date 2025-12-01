@@ -110,17 +110,20 @@ void inputSale(vector<Product>& products, vector<SaleItem>& sale) {
         for (auto& prod : products) {
             if (prod.name == itemName) {
                 found = true;
-                cout << "Enter units: ";
+                cout << "Enter amount: ";
                 cin >> quantity;
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-                if (quantity <= prod.stock) {
+                if (quantity <= 0) {
+                    cout << "Error: Quantity must be positive!\n";
+                }
+                else if (quantity > prod.stock) {
+                    cout << "Not enough stock. Available: " << prod.stock << endl;
+                }
+                else {
                     sale.push_back({ prod.name, prod.price, quantity });
                     prod.stock -= quantity;
                     cout << "Product added to sale.\n";
-                }
-                else {
-                    cout << "Not enough stock. Available: " << prod.stock << endl;
                 }
                 break;
             }
