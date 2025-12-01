@@ -56,7 +56,7 @@ void displayProducts(const vector<Product>& products) {
     cout << "End of displayProducts()\n";
 }
 
-// rule for correct phone number
+// rule for correct phone number 
 bool isValidPhone(const string& phone) {
     if (phone.length() != 10) return false;    
     for (char c : phone)
@@ -73,7 +73,7 @@ Customer identifyCustomer(vector<Customer>& customers) {
 
     if (!isValidPhone(phone)) {
         cout << "Error: Invalid phone format!\n";
-        return { "valid", "valid" };
+        return { "invalid", "invalid" };
     }
 
     for (auto& c : customers) {
