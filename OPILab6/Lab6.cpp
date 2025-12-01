@@ -56,6 +56,13 @@ void displayProducts(const vector<Product>& products) {
     cout << "End of displayProducts()\n";
 }
 
+// rule for correct phone number
+bool isValidPhone(const string& phone) {
+    if (phone.length() != 10) return false;    
+    for (char c : phone)
+        if (!isdigit(c)) return false;         
+    return true;
+}
 
 // struct to identify customer
 Customer identifyCustomer(vector<Customer>& customers) {
