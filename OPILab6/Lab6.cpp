@@ -73,7 +73,7 @@ Customer identifyCustomer(vector<Customer>& customers) {
 
     if (!isValidPhone(phone)) {
         cout << "Error: Invalid phone format!\n";
-        return { "INVALID", "INVALID" };
+        return { "valid", "valid" };
     }
 
     for (auto& c : customers) {
