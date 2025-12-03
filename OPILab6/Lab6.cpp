@@ -31,7 +31,7 @@ struct Customer {
     cout << "\n displayProducts() called\n";
     cout << "products.size() = " << products.size() << "\n";
 
-    // 👉 Перевірка порожнього списку
+    // Перевірка порожнього списку
     if (products.empty()) {
         cout << "\n=== Available products ===\n";
         cout << "Список товарів порожній!\n";
