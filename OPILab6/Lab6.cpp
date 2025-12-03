@@ -112,18 +112,26 @@ void inputSale(vector<Product>& products, vector<SaleItem>& sale) {
                 found = true;
                 cout << "Enter amount: ";
                 cin >> quantity;
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-                if (quantity <= 0) {
-                    cout << "Error: Quantity must be positive!\n";
-                }
-                else if (quantity > prod.stock) {
-                    cout << "Not enough stock. Available: " << prod.stock << endl;
+                if (cin.fail() || cin.peek() != '\n') {
+                    cout << "Error: Invalid input format! Please enter a valid integer.\n";
+
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 }
                 else {
-                    sale.push_back({ prod.name, prod.price, quantity });
-                    prod.stock -= quantity;
-                    cout << "Product added to sale.\n";
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                    if (quantity <= 0) {
+                        cout << "Error: Quantity must be positive!\n";
+                    }
+                    else if (quantity > prod.stock) {
+                        cout << "Not enough stock. Available: " << prod.stock << endl;
+                    }
+                    else {
+                        sale.push_back({ prod.name, prod.price, quantity });
+                        prod.stock -= quantity;
+                        cout << "Product added to sale.\n";
+                    }
                 }
                 break;
             }
