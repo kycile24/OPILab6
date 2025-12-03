@@ -26,10 +26,17 @@ struct Customer {
     string phone;
 };
 
-// Debug function to display products
-void displayProducts(const vector<Product>& products) {
+    // Debug function to display products
+    void displayProducts(const vector<Product>& products) {
     cout << "\n displayProducts() called\n";
     cout << "products.size() = " << products.size() << "\n";
+
+    // 👉 Перевірка порожнього списку
+    if (products.empty()) {
+        cout << "\n=== Available products ===\n";
+        cout << "Список товарів порожній!\n";
+        return;  // нічого більше не виводимо
+    }
 
     cout << "\n=== Available products ===\n";
     cout << left << setw(15) << "Name"
@@ -44,17 +51,20 @@ void displayProducts(const vector<Product>& products) {
         cout << "price = " << prod.price << "\n";
         cout << "stock = " << prod.stock << "\n";
 
+        if (prod.stock < 0) {
+            cout << "Error: Negative stock for product " << prod.name << "!\n";
+        }
+        if (prod.stock == 0) {
+            cout << "Warning: Out of stock for product " << prod.name << "!\n";
+        }
+
         cout << left << setw(15) << prod.name
              << setw(8) << fixed << setprecision(2) << prod.price
              << setw(8) << prod.stock << endl;
 
         index++;
     }
-
-    cout << "----------------------------\n";
-    cout << "End of displayProducts()\n";
 }
-
 // ������������� �볺���
 Customer identifyCustomer(vector<Customer>& customers) {
     string phone;
